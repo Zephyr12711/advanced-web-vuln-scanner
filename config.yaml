@@ -1,0 +1,21 @@
+
+target: "example.com"
+login:
+  url: null
+  method: "form"
+  credentials:
+    username: ""
+    password: ""
+scan:
+  max_concurrency: 10
+  timeout: 30
+  depth: 3
+  templates: ["xss", "sqli", "ssrf", "csrf", "idor", "xxe", "cmd_injection"]
+oob:
+  dns_server: "127.0.0.1"
+  port: 9999
+  enabled: false
+report:
+  format: ["html", "json"]
+  output_dir: "./reports"
+plugins: ["ai_patch"]
