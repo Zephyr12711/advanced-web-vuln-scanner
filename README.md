@@ -29,3 +29,66 @@ Zephyr is a comprehensive, modular vulnerability scanner designed for ethical ha
 | Server-Side Request Forgery (SSRF) | Network callback validation | High |
 | XML External Entity (XXE) | Entity expansion testing | High |
 | Command Injection | System response analysis | Critical |
+## Usage
+
+### Basic Usage
+
+1. **Create configuration file:**
+2. python advanced_vuln_scanner.py --create-config
+3. **Edit the config.yaml file:**
+4. target: "https://your-target.com"
+scan:
+max_concurrency: 10
+timeout: 30
+templates: ["xss", "sqli", "ssrf", "xxe", "cmd_injection"]
+
+ **Run the scanner:**
+ python advanced_vuln_scanner.py
+
+ ### Advanced Usage
+
+#### Authenticated Scanning
+Configure login credentials in `config.yaml`:
+login:
+url: "https://target.com/login"
+credentials:
+username: "your_username"
+password: "your_password"
+#### Custom Report Formats
+report:
+format: ["html", "json", "markdown"]
+output_dir: "./custom_reports"
+
+#### Enable Out-of-Band Testing
+
+oob:
+dns_server: "127.0.0.1"
+port: 9999
+enabled: true
+
+### Example Scan Output
+
+🚀 Advanced Website Vulnerability Scanner Starting...
+Target: http://testphp.vulnweb.com
+✓ Authentication successful
+📊 Discovery Results:
+
+Endpoints found: 15
+
+Forms found: 3
+Starting vulnerability scanning...
+Scanning: 100%|████████████| 15/15 [00:30<00:00]
+📋 Scan Summary:
+
+Total vulnerabilities found: 2
+
+Critical: 1
+
+High: 1
+Reports generated in ./reports
+
+
+
+View help
+python advanced_vuln_scanner.py --help
+
