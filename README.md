@@ -66,29 +66,4 @@ dns_server: "127.0.0.1"
 port: 9999
 enabled: true
 
-### Example Scan Output
-
-🚀 Advanced Website Vulnerability Scanner Starting...
-Target: http://testphp.vulnweb.com
-✓ Authentication successful
-📊 Discovery Results:
-
-Endpoints found: 15
-
-Forms found: 3
-Starting vulnerability scanning...
-Scanning: 100%|████████████| 15/15 [00:30<00:00]
-📋 Scan Summary:
-
-Total vulnerabilities found: 2
-
-Critical: 1
-
-High: 1
-Reports generated in ./reports
-
-
-
-View help
-python advanced_vuln_scanner.py --help
 
